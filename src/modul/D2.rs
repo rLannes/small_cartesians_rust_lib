@@ -17,12 +17,13 @@ impl vect_2D{
     pub fn dot_product(&self, v:&vect_2D)-> f32{
         self.x * v.x + self.y * v.y
     }
-
+    /// compute distance to origines
     pub fn distance_from_origins(&self) -> f32{
         (self.x.powf(2.0f32) + self.y.powf(2.0f32)).sqrt()
     }
 
     // to recheck for rad
+    /// compute angl fro origin in radians[0, 2pi]
     pub fn rad_to_origins(&self) -> f32 {
         let mut angle: f32;
 
@@ -57,7 +58,7 @@ impl vect_2D{
 
         angle
     }
-
+    /// return an angular 2D that correspond to self
     pub fn to_angular_2D(&self) -> angular_2D{
         let rayon = self.distance_from_origins();
         let angle = self.rad_to_origins();
@@ -77,3 +78,26 @@ struct angular_2D{
 //
 //
 //}
+
+struct rectangle{
+    up_left: vect_2D,
+    down_right: vect_2D
+}
+
+impl rectangle{
+
+    pub fn height(&self) -> f32{
+        (self.up_left.y - self.down_right.y).abs()
+    }
+
+    pub fn width(&self) -> f32{
+        (self.up_left.x - self.down_right.y).abs()
+    }
+    pub fn perimeter(&self)->f32{
+        2f32 * self.width() + 2f32 * self.height()
+    }
+
+    pub fn area(&self) -> f32{
+        self.width() * self.height()
+    }
+}
