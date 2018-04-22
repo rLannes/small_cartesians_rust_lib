@@ -1,20 +1,20 @@
 use std::f32;
 
 /// a 2D vector with x, and y position as f32
-struct vect_2D{
+struct Vect2D {
     x: f32,
     y: f32
 }
 
 
-impl vect_2D{
+impl Vect2D {
 
-    pub fn add_vec(&mut self, v:&vect_2D){
+    pub fn add_vec(&mut self, v:&Vect2D){
         self.x += v.x;
         self.y += v.y;
     }
 
-    pub fn dot_product(&self, v:&vect_2D)-> f32{
+    pub fn dot_product(&self, v:&Vect2D) -> f32{
         self.x * v.x + self.y * v.y
     }
     /// compute distance to origines
@@ -80,8 +80,8 @@ struct angular_2D{
 //}
 
 struct rectangle{
-    up_left: vect_2D,
-    down_right: vect_2D
+    up_left: Vect2D,
+    down_right: Vect2D
 }
 
 impl rectangle{
@@ -100,4 +100,7 @@ impl rectangle{
     pub fn area(&self) -> f32{
         self.width() * self.height()
     }
+
+   // pub fn center(&self) -> Vect2D {
+    //}
 }
