@@ -1,7 +1,7 @@
 use std::f32;
 
 /// a 2D vector with x, and y position as f32
-struct Vect2D {
+pub struct Vect2D {
     x: f32,
     y: f32
 }
@@ -69,7 +69,7 @@ impl Vect2D {
 
 
 ///an angular vec with r as rayon and theta in radians from origins both f32.
-struct Angular2d{
+pub struct Angular2d{
     r: f32,
     theta: f32
 }
@@ -79,7 +79,7 @@ struct Angular2d{
 //
 //}
 
-struct Rectangle{
+pub struct Rectangle{
     up_left: Vect2D,
     down_right: Vect2D
 }
