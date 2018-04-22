@@ -65,6 +65,10 @@ impl Vect2D {
         Angular2d{r:rayon, theta:angle}
 
     }
+
+    pub fn get_position(&self)-> (f32, f32){
+        (self.x, self.y)
+    }
 }
 
 
