@@ -9,7 +9,7 @@ struct vect_2D{
 
 impl vect_2D{
 
-    pub fn add(&mut self, v:&vect_2D){
+    pub fn add_vec(&mut self, v:&vect_2D){
         self.x += v.x;
         self.y += v.y;
     }
