@@ -1,2 +1,2 @@
-pub mod D2;
-pub mod D3;
+pub mod d2;
+pub mod d3;

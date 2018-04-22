@@ -59,17 +59,17 @@ impl Vect2D {
         angle
     }
     /// return an angular 2D that correspond to self
-    pub fn to_angular_2D(&self) -> angular_2D{
+    pub fn to_angular_2D(&self) -> Angular2d{
         let rayon = self.distance_from_origins();
         let angle = self.rad_to_origins();
-        angular_2D{r:rayon, theta:angle}
+        Angular2d{r:rayon, theta:angle}
 
     }
 }
 
 
 ///an angular vec with r as rayon and theta in radians from origins both f32.
-struct angular_2D{
+struct Angular2d{
     r: f32,
     theta: f32
 }
@@ -79,12 +79,12 @@ struct angular_2D{
 //
 //}
 
-struct rectangle{
+struct Rectangle{
     up_left: Vect2D,
     down_right: Vect2D
 }
 
-impl rectangle{
+impl Rectangle{
 
     pub fn height(&self) -> f32{
         (self.up_left.y - self.down_right.y).abs()
